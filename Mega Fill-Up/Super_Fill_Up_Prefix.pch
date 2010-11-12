@@ -1,0 +1,44 @@
+//
+// Prefix header for all source files of the 'Super Fill Up' target in the 'Super Fill Up' project
+//
+#define NSLog(format, ...)
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+	#import "cocos2d.h"
+	#import "chipmunk.h"
+	#import "globals.h"
+#endif
+
+
+
+#define GAME_FIELD_PLAYER_ENEMY_COLLISION_NOTIFICATION @"GAME_FIELD_PLAYER_ENEMY_COLLISION_NOTIFICATION"
+#define CHANGE_TO_NEXT_LEVEL_NOTIFICATION @"CHANGE_TO_NEXT_LEVEL_NOTIFICATION"
+
+#define CLASSIC_MODE 4
+#define GRAVITY_MODE 8
+
+
+
+//defined automatically at startup by the GLView's frame
+int SCREEN_WIDTH;
+int SCREEN_HEIGHT;
+
+#define MAX_FILL_AREA (SCREEN_WIDTH * SCREEN_HEIGHT)
+
+
+#define GAME_CENTER_CLASSIC_LEADERBORAD_CATEGORY @"com.minyxgames.megafillup.highscore.classic"
+#define GAME_CENTER_GRAVITY_LEADERBORAD_CATEGORY @"com.minyxgames.megafillup.highscore.gravity"
+
+#define BACKGROUND_FILENAME @"test_gradient.png"
+
+#define BALL_SPRITE_SIZE 260.0f
+
+
+/** ** TO ENABLE LITE VERSION UNCOMMENT FOLLOWING: ** **/
+//#define GOD_MODE YES
+//#define __LITE__VERSION__ YES
+
+#define ORIENTATION_LANDSCAPE_LOCKED YES
+#define ACCELEROMETER_ON YES
