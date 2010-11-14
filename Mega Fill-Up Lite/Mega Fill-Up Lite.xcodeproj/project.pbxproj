@@ -515,7 +515,6 @@
 		031A223C12719A6D007EFBFF /* back_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_gradient.png; sourceTree = "<group>"; };
 		031E4F88127D84E4004BEF9F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		031E4F89127D84E4004BEF9F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		031E50C6127DEFF8004BEF9F /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		031E547B127EC678004BEF9F /* game_center_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_center_default.png; sourceTree = "<group>"; };
 		031E547C127EC678004BEF9F /* game_center_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_center_pressed.png; sourceTree = "<group>"; };
 		031E54B5127ECA38004BEF9F /* game_center_default_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_center_default_2.png; sourceTree = "<group>"; };
@@ -606,6 +605,7 @@
 		039939E7126B26A10039231D /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		039939EF126B26F20039231D /* bim1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bim1.wav; sourceTree = "<group>"; };
 		039939F1126B27300039231D /* tick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tick.wav; sourceTree = "<group>"; };
+		039C5531129035430051EA51 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		03B5DCC01278931000B19A14 /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
 		03B5DCC11278931000B19A14 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
 		03B5DCC21278931000B19A14 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
@@ -629,7 +629,6 @@
 		03C3806512672457005FE590 /* LoadingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScene.m; sourceTree = "<group>"; };
 		03C380A212672914005FE590 /* TouchLayerHack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchLayerHack.h; sourceTree = "<group>"; };
 		03C380A312672914005FE590 /* TouchLayerHack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchLayerHack.m; sourceTree = "<group>"; };
-		03C5E5AF12816D7000A1BA83 /* EntitlementsDebug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntitlementsDebug.plist; sourceTree = "<group>"; };
 		03C9D9F51278E30E0087C5F7 /* visitor_16.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = visitor_16.fnt; sourceTree = "<group>"; };
 		03C9D9F61278E30E0087C5F7 /* visitor_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visitor_16.png; sourceTree = "<group>"; };
 		03C9D9F71278E30E0087C5F7 /* visitor_32.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = visitor_32.fnt; sourceTree = "<group>"; };
@@ -1239,10 +1238,9 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				03CA16AC127B63B7005BF163 /* SystemConfiguration.framework */,
-				031E50C6127DEFF8004BEF9F /* Entitlements.plist */,
-				03C5E5AF12816D7000A1BA83 /* EntitlementsDebug.plist */,
 				03D69E1612858FF30069C7B0 /* MessageUI.framework */,
 				03D69E1A12858FFE0069C7B0 /* MediaPlayer.framework */,
+				039C5531129035430051EA51 /* Entitlements.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -2385,7 +2383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Super Fill Up/EntitlementsDebug.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Minyx/Code/Mega Fill-Up/Mega Fill-Up Lite/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2434,7 +2432,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jaroslaw Szpilewski";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
@@ -2458,7 +2456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Super Fill Up/EntitlementsDebug.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Minyx/Code/Mega Fill-Up/Mega Fill-Up Lite/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2506,7 +2504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Super Fill Up/EntitlementsDebug.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Minyx/Code/Mega Fill-Up/Mega Fill-Up Lite/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2536,7 +2534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Super Fill Up/EntitlementsDebug.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Dropbox/Minyx/Code/Mega Fill-Up/Mega Fill-Up Lite/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -2602,7 +2600,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = EntitlementsDebug.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jaroslaw Szpilewski (4M65AH57PH)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2631,7 +2628,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = EntitlementsDebug.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jaroslaw Szpilewski (4M65AH57PH)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;

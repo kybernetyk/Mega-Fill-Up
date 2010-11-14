@@ -26,6 +26,20 @@
     return self;
 }
 */
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+	NSLog(@"peniswurstum");
+#ifdef ORIENTATION_LANDSCAPE_LOCKED
+	if (interfaceOrientation ==  UIInterfaceOrientationLandscapeRight)
+		return YES;
+#else
+	if( interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+	   interfaceOrientation == UIInterfaceOrientationLandscapeRight )
+		return YES;
+#endif
+	
+	return NO;
+}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -35,8 +49,6 @@
 
 	can_show_iad = NO;
 	can_show_admob = NO;
-	
-	
 
 	adMobAd = [AdMobView requestAdWithDelegate: self];
 	[adMobAd retain];
@@ -116,25 +128,28 @@
 	[self hideHouseAd];
 	[self hideAdMob];
 	
-	CGRect frame;
+	[iAdView setHidden: NO];
+	
+/*(	CGRect frame;
 	frame.origin.x = 0.0;
 	frame.origin.y = 0.0;
 	frame.size.width = 480;
 	frame.size.height = 32;
 	
-	[iAdView setFrame: frame];
+	[iAdView setFrame: frame];*/
+	
 	
 }
 
 - (void) hideIAd
 {
-	CGRect frame;
+/*	CGRect frame;
 	frame.origin.x = -480;
 	frame.origin.y = 0.0;
 	frame.size.width = 480;
-	frame.size.height = 32;
-	
-	[iAdView setFrame: frame];
+	frame.size.height = 32;*/
+	[iAdView setHidden: YES];
+//	[iAdView setFrame: frame];
 	NSLog(@"hiding iAd");
 }
 
