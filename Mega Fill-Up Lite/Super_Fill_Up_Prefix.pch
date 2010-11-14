@@ -1,7 +1,7 @@
 //
 // Prefix header for all source files of the 'Super Fill Up' target in the 'Super Fill Up' project
 //
-//#define NSLog(format, ...)
+#define NSLog(format, ...)
 
 #ifdef __OBJC__
 	#import <Foundation/Foundation.h>
