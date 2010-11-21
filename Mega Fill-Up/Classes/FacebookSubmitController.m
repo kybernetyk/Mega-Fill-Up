@@ -15,6 +15,7 @@
 @synthesize score;
 @synthesize level;
 @synthesize delegate;
+@synthesize facebook;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -32,7 +33,15 @@
     [super viewDidLoad];
 }
 */
-
+- (BOOL) handleOpenURL: (NSURL *) url
+{
+	if (!facebook)
+	{
+		facebook = [[Facebook alloc] init];
+	}
+	
+	return [facebook handleOpenURL: url];
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -89,12 +98,15 @@
 		
 		NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
 		NSString *token = [defs objectForKey: @"fbtoken"];
+		NSDate *date = [defs objectForKey: @"fbdate"];
 		if (token)
 		{
 			NSLog(@"found token: %@", token);
 			[facebook setAccessToken: token];	
+			[facebook setExpirationDate: date];
+			[self share2];
+			return;
 		}
-		
 		NSArray *perms = [NSArray arrayWithObjects:@"publish_stream",@"offline_access", nil];
 		[facebook authorize: APP_ID permissions: perms delegate: self];
 		
@@ -110,6 +122,7 @@
 	{
 		NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
 		[defs setObject: [facebook accessToken] forKey: @"fbtoken"];
+		[defs setObject: [facebook expirationDate] forKey: @"fbdate"];
 		[defs synchronize];
 	}
 	
@@ -136,6 +149,7 @@
 	NSLog(@"fb nologin");
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
 	[defs removeObjectForKey: @"fbtoken"];
+	[defs removeObjectForKey: @"fbdate"];
 	[defs synchronize];
 	
 	isPostingOnFB = NO;
@@ -161,6 +175,7 @@
 	NSLog(@"fb logout");
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
 	[defs removeObjectForKey: @"fbtoken"];
+	[defs removeObjectForKey: @"fbdate"];
 	[defs synchronize];
 	
 	unlock_orientation = NO;

@@ -41,6 +41,7 @@
 					   [NSNumber numberWithBool: YES], @"gameStartedBefore",
 					   [NSNumber numberWithInteger: GKLeaderboardTimeScopeToday], @"leaderboardScope",
 					   [NSNumber numberWithBool: NO], @"dontAskGC",
+					   [NSNumber numberWithBool: NO], @"isFullVersion_1",
 					   nil];
 	[defs registerDefaults: d];
 }
@@ -112,6 +113,10 @@ void uncaughtExceptionHandler(NSException *exception)
 	EAGLView *glView = [viewController glView];
 
 	
+	//TODO: REMOVE THIS IN 1.2
+	
+	[[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"isFullVersion_1"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	//
 	// Create the EAGLView manually
@@ -310,6 +315,15 @@ void uncaughtExceptionHandler(NSException *exception)
 - (void)applicationSignificantTimeChange:(UIApplication *)application {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+	//[[facebookController facebook] handleOpenURL: url];
+	return [viewController handleOpenURL: url];
+	
+	return YES;
+}
+
 
 - (void)dealloc {
 	[[CCDirector sharedDirector] release];

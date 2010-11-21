@@ -76,7 +76,33 @@
 					 
 				 }];
 		
-		NSArray *blah = [NSArray arrayWithObjects: gcmenuitem, item1,item2,item3,item4,item5,item6,nil];
+
+		CCMenuItemImage *i1 = [CCMenuItemImage itemFromNormalImage: @"SoundON.png" selectedImage: @"SoundON_P.png"];
+		CCMenuItemImage *i2 = [CCMenuItemImage itemFromNormalImage: @"SoundOFF.png" selectedImage: @"SoundOFF_P.png"];
+		
+		id one;
+		id two;
+		
+		if (is_sfx_enabled)
+		{
+			one = i1;
+			two = i2;
+		}
+		else
+		{
+			one = i2;
+			two = i1;
+		}
+		
+		CCMenuItemToggle *toggle1 = [CCMenuItemToggle itemWithBlock: ^(id sender)
+									{
+										is_sfx_enabled = !is_sfx_enabled;
+										NSLog(@"sound is: %i", is_sfx_enabled);
+									}
+															 items: one, two,nil];
+		
+		
+		NSArray *blah = [NSArray arrayWithObjects: gcmenuitem, item1,item2,item3,item4,item5,item6,i1,i2,nil];
 		for (CCMenuItemImage *item in blah)
 		{
 			[[[item normalImage] texture] setAliasTexParameters];	
@@ -91,10 +117,10 @@
 		if ([GameCenterManager isGameCenterAvailable] && g_is_online)
 		{	
 			if ([[GKLocalPlayer localPlayer] isAuthenticated])
-				menu = [CCMenu menuWithItems: item1, item2, item3, item4, item5, item6,nil];
+				menu = [CCMenu menuWithItems: item1, item2, item3, item4, item5, item6,toggle1,nil];
 			else
 			{	
-				menu = [CCMenu menuWithItems: gcmenuitem, item1, item2, item5, item6,nil];	
+				menu = [CCMenu menuWithItems: gcmenuitem, item1, item2, item5, item6,toggle1,nil];	
 		
 /*				if (![[NSUserDefaults standardUserDefaults] boolForKey: @"dontAskGC"])
 				{
@@ -108,7 +134,7 @@
 		}
 		else 
 		{
-			menu = [CCMenu menuWithItems: item1, item2, item5, item6,nil];
+			menu = [CCMenu menuWithItems: item1, item2, item5, item6,toggle1,nil];
 		}
 
 		NSLog(@"menu pos: %f,%f", [menu position].x, [menu position].y);
@@ -118,6 +144,9 @@
 #else
 		[menu alignItemsVerticallyWithPadding: 16.0];
 #endif
+
+		
+				[menu alignItemsVerticallyWithPadding: 11.0];
 		
 		[menu setPosition: ccp(64+20.0-2, SCREEN_HEIGHT/2)];
 		
@@ -146,6 +175,24 @@
 			[self addChild: menu];
 		}
 #endif
+		/*
+		
+		
+		CCMenuItemFont *itm1 = [CCMenuItemFont itemFromString: @"Sound Is On"];
+		CCMenuItemFont *itm2 = [CCMenuItemFont itemFromString: @"Sound Is Off"];
+		
+		CCMenuItemToggle *toggle = [CCMenuItemToggle itemWithBlock: ^(id sender)
+									{
+										is_sfx_enabled = !is_sfx_enabled;
+										NSLog(@"sound is: %i", is_sfx_enabled);
+									}
+															 items: itm1, itm2,nil];
+		
+		
+		menu = [CCMenu menuWithItems: toggle,nil];
+		[menu setPosition: ccp (SCREEN_WIDTH - 90.0, SCREEN_HEIGHT - 50.0)];
+		
+		[self addChild: menu];*/
 		
 	}
 	return self;

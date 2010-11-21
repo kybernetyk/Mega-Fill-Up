@@ -21,10 +21,11 @@
 	BOOL dismissing;
 	
 }
-
+@property (readwrite, retain) Facebook *facebook;
 @property (readwrite, assign) NSInteger score;
 @property (readwrite, assign) NSInteger level;
 @property (readwrite, assign) id delegate;
 - (void) shareOverFarmville;
+- (BOOL) handleOpenURL: (NSURL *) url;
 
 @end

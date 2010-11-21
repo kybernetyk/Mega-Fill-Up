@@ -375,6 +375,9 @@
 	[[glView layer] setMagnificationFilter: kCAFilterNearest];
 	mayReleaseMemory = YES;
 	
+	facebookController = [[FacebookSubmitController alloc] initWithNibName: @"FacebookSubmitController" bundle: nil];
+	[facebookController setDelegate: self];
+	
 	/*CCTexture2D *tex = [[CCTextureCache sharedTextureCache] addImage: @"face_2.png"];
 	ccTexParams texParams = { GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE, GL_CLAMP_TO_EDGE };
 	[tex setTexParameters: &texParams];
@@ -402,6 +405,11 @@
 //	NSLog(@"unload: my view is: %@", view]);
 //	NSLog(@"unload: my gl view is: %@", [self glView]);
 	//[self setGlView: nil];
+}
+
+- (BOOL) handleOpenURL: (NSURL *) url
+{
+	return [[facebookController facebook] handleOpenURL: url];
 }
 
 
@@ -449,13 +457,12 @@
 	
 //	[[[UIApplication sharedApplication] delegate] pauseGame];
 	[FlurryAPI logEvent:@"Facebook"];
-	FacebookSubmitController *fbsc = [[FacebookSubmitController alloc] initWithNibName: @"FacebookSubmitController" bundle: nil];
-	[fbsc setDelegate: self];
-	[fbsc setLevel: g_GameInfo.currentLevel];
-	[fbsc setScore: g_GameInfo.score];
+	
+	[facebookController setLevel: g_GameInfo.currentLevel];
+	[facebookController setScore: g_GameInfo.score];
 	
 //	[self presentModalViewController: fbsc animated: YES];
-	[fbsc shareOverFarmville];
+	[facebookController shareOverFarmville];
 
 	NSLog(@"charlie alpha bingo");
 }
@@ -465,7 +472,7 @@
 	//[self dismissModalViewControllerAnimated: YES];
 //	[[[UIApplication sharedApplication] delegate] resumeGame];
 	NSLog(@"facebook controller finished");
-	[controller autorelease];
+
 	mayReleaseMemory = YES;
 }
 

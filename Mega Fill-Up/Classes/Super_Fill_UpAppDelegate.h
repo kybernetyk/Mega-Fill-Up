@@ -20,8 +20,7 @@
 	UIWindow			*window;
 	MainViewController	*viewController;
 	UIImageView *splashView; 
-	
-		Reachability *reachability;
+	Reachability *reachability;
 }
 
 @property (nonatomic, retain) UIWindow *window;

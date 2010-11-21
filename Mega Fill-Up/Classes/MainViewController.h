@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GameKit/GameKit.h>
+#import "FacebookSubmitController.h"
 
 @interface GKLeaderboardViewController (meinpenis)
 @end
@@ -19,6 +20,7 @@
 	id tmp;
 	
 	BOOL mayReleaseMemory;
+	FacebookSubmitController *facebookController;
 	
 	BOOL flag;
 	BOOL rebuildMipMaps;
@@ -27,5 +29,6 @@
 @property (readwrite, retain) IBOutlet EAGLView *glView;
 - (void) shareScoreOnFarmville;
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController;
+- (BOOL) handleOpenURL: (NSURL *) url;
 
 @end

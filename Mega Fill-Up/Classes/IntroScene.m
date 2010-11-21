@@ -103,7 +103,8 @@
 		bar1_factor = -1.0;
 		bar2_factor = 1.0;
 
-		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"intro.mp3" loop: YES];
+		if (is_sfx_enabled)
+			[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"intro.mp3" loop: YES];
 		
 /*		NSLog(@"%@",[NSDate date]);
 		
