@@ -30,9 +30,14 @@
 		[self addChild: mml z: 5];
 		NSLog(@"mml: %i",[mml retainCount]);
 		
-		mbl = [MenuBackgroundLayer nodeWithOneAwesomeFace];
+/*		mbl = [MenuBackgroundLayer nodeWithOneAwesomeFace];
 		[mbl setPosition: ccp(150.0,25.0)];
-		[self addChild: mbl z: 2];
+		[self addChild: mbl z: 2];*/
+		
+		CCSprite *spr = [CCSprite spriteWithFile: @"fullgameteaser.png"];
+		[spr setAnchorPoint: ccp(0.0,0.0)];
+		[spr setPosition: ccp(480-256-10,10.0)];
+		[self addChild: spr z: 3];
 		
 		NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 		[center addObserver: self selector: @selector(handleStartClassicGameMenuItem:) name: @"MXStartClassicGameMenuItem" object: nil];

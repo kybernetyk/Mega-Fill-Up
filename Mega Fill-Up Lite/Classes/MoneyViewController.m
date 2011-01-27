@@ -72,9 +72,13 @@
 		
 		return;
 	}
+
+	NSLog(@"can_show_iad: %i", can_show_iad);
+	NSLog(@"can_show_admob: %i", can_show_admob);
 	
 	if (can_show_iad)
 	{
+
 		[self showIAd];
 		return;
 	}
@@ -117,7 +121,10 @@
 
 - (IBAction) openHouseAd: (id) sender
 {
-	[[BCAchievementNotificationCenter defaultCenter] notifyWithTitle:@"Yo Dawg!" message:@"Sup dawg?" image: [UIImage imageNamed: @"Icon.png"]];
+	//[[BCAchievementNotificationCenter defaultCenter] notifyWithTitle:@"Yo Dawg!" message:@"Sup dawg?" image: [UIImage imageNamed: @"Icon.png"]];
+	
+	[[UIApplication sharedApplication] openURL: [NSURL URLWithString: @"http://itunes.apple.com/us/app/mega-fill-up/id400633918?mt=8&ls=1"]];
+	
 }
 
 #pragma mark -
@@ -209,7 +216,9 @@
 
 
 
-- (NSString *)publisherIdForAd:(AdMobView *)adView {
+- (NSString *)publisherIdForAd:(AdMobView *)adView 
+{
+	NSLog(@"publisher ID for AD?");
 	return @"a14cd555ce52c23"; // this should be prefilled; if not, get it from www.admob.com
 }
 

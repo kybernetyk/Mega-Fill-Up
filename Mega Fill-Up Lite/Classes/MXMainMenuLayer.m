@@ -15,6 +15,7 @@
 	self = [super init];
 	if (self)
 	{
+		
 	//	[self setIsTouchEnabled: YES];
 		CCMenuItemImage *item2 = [CCMenuItemImage itemFromNormalImage: @"classic_game_default.png" selectedImage: @"classic_game_selected.png" 
 														   block: 
@@ -25,14 +26,14 @@
 								 
 							 }];
 		
-		CCMenuItemImage *item1 = [CCMenuItemImage itemFromNormalImage: @"gravity_game_default.png" selectedImage: @"gravity_game_selected.png"
-														   block: 
-							 ^(id sender)
-							 {
-								 NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-								 [center postNotificationName: @"MXStartGravityGameMenuItem" object: sender];
-								 
-							 }];
+//		CCMenuItemImage *item1 = [CCMenuItemImage itemFromNormalImage: @"gravity_game_default.png" selectedImage: @"gravity_game_selected.png"
+//														   block: 
+//							 ^(id sender)
+//							 {
+//								 NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//								 [center postNotificationName: @"MXStartGravityGameMenuItem" object: sender];
+//								 
+//							 }];
 		CCMenuItemImage *item4 = [CCMenuItemImage itemFromNormalImage: @"classic_scores_default.png" selectedImage: @"classic_scores_selected.png"
 														   block: 
 							 ^(id sender)
@@ -41,14 +42,14 @@
 								 [center postNotificationName: @"MXShowClassicHighScores" object: sender];
 								 
 							 }];
-		CCMenuItemImage *item3 = [CCMenuItemImage itemFromNormalImage: @"gravity_score_default.png" selectedImage: @"gravity_score_selected.png"
-														   block: 
-							 ^(id sender)
-							 {
-								 NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-								 [center postNotificationName: @"MXShowGravityHighScores" object: sender];
-								 
-							 }];
+//		CCMenuItemImage *item3 = [CCMenuItemImage itemFromNormalImage: @"gravity_score_default.png" selectedImage: @"gravity_score_selected.png"
+//														   block: 
+//							 ^(id sender)
+//							 {
+//								 NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//								 [center postNotificationName: @"MXShowGravityHighScores" object: sender];
+//								 
+//							 }];
 		CCMenuItemImage *item5 = [CCMenuItemImage itemFromNormalImage: @"instructions_default.png" selectedImage: @"instructions_selected.png"
 														   block: 
 							 ^(id sender)
@@ -76,7 +77,32 @@
 					 
 				 }];
 		
-		NSArray *blah = [NSArray arrayWithObjects: gcmenuitem, item1,item2,item3,item4,item5,item6,nil];
+		CCMenuItemImage *i1 = [CCMenuItemImage itemFromNormalImage: @"SoundON.png" selectedImage: @"SoundON_P.png"];
+		CCMenuItemImage *i2 = [CCMenuItemImage itemFromNormalImage: @"SoundOFF.png" selectedImage: @"SoundOFF_P.png"];
+		
+		id one;
+		id two;
+		
+		if (is_sfx_enabled)
+		{
+			one = i1;
+			two = i2;
+		}
+		else
+		{
+			one = i2;
+			two = i1;
+		}
+		
+		CCMenuItemToggle *toggle1 = [CCMenuItemToggle itemWithBlock: ^(id sender)
+									 {
+										 is_sfx_enabled = !is_sfx_enabled;
+										 NSLog(@"sound is: %i", is_sfx_enabled);
+									 }
+															  items: one, two,nil];
+		
+		
+		NSArray *blah = [NSArray arrayWithObjects: gcmenuitem, item2,item4,item5,item6,i1,i2,nil];
 		for (CCMenuItemImage *item in blah)
 		{
 			[[[item normalImage] texture] setAliasTexParameters];	
@@ -91,10 +117,10 @@
 		if ([GameCenterManager isGameCenterAvailable] && g_is_online)
 		{	
 			if ([[GKLocalPlayer localPlayer] isAuthenticated])
-				menu = [CCMenu menuWithItems: item1, item2, item3, item4, item5, item6,nil];
+				menu = [CCMenu menuWithItems: item2, item4, item5, item6,toggle1,nil];
 			else
 			{	
-				menu = [CCMenu menuWithItems: gcmenuitem, item1, item2, item5, item6,nil];	
+				menu = [CCMenu menuWithItems: gcmenuitem, item2, item5, item6,toggle1,nil];	
 		
 /*				if (![[NSUserDefaults standardUserDefaults] boolForKey: @"dontAskGC"])
 				{
@@ -108,7 +134,7 @@
 		}
 		else 
 		{
-			menu = [CCMenu menuWithItems: item1, item2, item5, item6,nil];
+			menu = [CCMenu menuWithItems: item2, item5, item6,nil];
 		}
 
 		NSLog(@"menu pos: %f,%f", [menu position].x, [menu position].y);
@@ -125,28 +151,21 @@
 		NSLog(@"menu pos: %f,%f", [menu position].x, [menu position].y);
 		
 		[self addChild: menu];
-#ifdef COOL_GC_BUTTON		
-		if ([GameCenterManager isGameCenterAvailable])
-		{
-			item1 = [CCMenuItemImage itemFromNormalImage: @"game_center_default_2.png" selectedImage: @"game_center_pressed_2.png"
+
+		CCMenuItemImage *item1 = [CCMenuItemImage itemFromNormalImage: @"getitnow_default.png" selectedImage: @"getitnow_selected.png"
 												   block: 
 					 ^(id sender)
 					 {
-						 NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-						 [center postNotificationName: @"MXGameCenterDialog" object: sender];
-						 
+						[[UIApplication sharedApplication] openURL: [NSURL URLWithString: @"http://itunes.apple.com/us/app/mega-fill-up/id400633918?mt=8&ls=1"]];
 					 }];
 			[[[item1 normalImage] texture] setAliasTexParameters];	
 			[[[item1 selectedImage] texture] setAliasTexParameters];	
 			
 			
 			menu = [CCMenu menuWithItems: item1, nil];
-			[menu setPosition: ccp(SCREEN_WIDTH - 125.0f/2 - 15.0f/4-15.0, SCREEN_HEIGHT - 58.0)];
+			[menu setPosition: ccp(SCREEN_WIDTH/2+96 , 40)];
 			
 			[self addChild: menu];
-		}
-#endif
-		
 	}
 	return self;
 }

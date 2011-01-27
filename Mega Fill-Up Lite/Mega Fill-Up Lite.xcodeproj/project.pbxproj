@@ -58,6 +58,14 @@
 		031E54B7127ECA38004BEF9F /* game_center_default_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 031E54B5127ECA38004BEF9F /* game_center_default_2.png */; };
 		031E54B8127ECA38004BEF9F /* game_center_pressed_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 031E54B6127ECA38004BEF9F /* game_center_pressed_2.png */; };
 		031E554A127ED84F004BEF9F /* please_sign_in.png in Resources */ = {isa = PBXBuildFile; fileRef = 031E5549127ED84F004BEF9F /* please_sign_in.png */; };
+		0322D4A512F193BF00BCE042 /* libAdMob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0322D4A412F193BF00BCE042 /* libAdMob.a */; };
+		0322D4BA12F19CB300BCE042 /* fullgameteaser.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4B912F19CB300BCE042 /* fullgameteaser.png */; };
+		0322D4DC12F1A0AF00BCE042 /* getitnow_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4DA12F1A0AF00BCE042 /* getitnow_default.png */; };
+		0322D4DD12F1A0AF00BCE042 /* getitnow_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4DB12F1A0AF00BCE042 /* getitnow_selected.png */; };
+		0322D4FB12F1A28C00BCE042 /* SoundOFF_P.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4F712F1A28C00BCE042 /* SoundOFF_P.png */; };
+		0322D4FC12F1A28C00BCE042 /* SoundOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4F812F1A28C00BCE042 /* SoundOFF.png */; };
+		0322D4FD12F1A28C00BCE042 /* SoundON_P.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4F912F1A28C00BCE042 /* SoundON_P.png */; };
+		0322D4FE12F1A28C00BCE042 /* SoundON.png in Resources */ = {isa = PBXBuildFile; fileRef = 0322D4FA12F1A28C00BCE042 /* SoundON.png */; };
 		0329D71A126A610D00589909 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0329D719126A610D00589909 /* GameKit.framework */; };
 		0329D760126A66C100589909 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0329D75F126A66C100589909 /* GameCenterManager.m */; };
 		0329D81C126A74ED00589909 /* HighscoreSubmitOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0329D81B126A74ED00589909 /* HighscoreSubmitOperation.m */; };
@@ -166,7 +174,6 @@
 		03D69CFB1285868C0069C7B0 /* housead_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D69CF81285868C0069C7B0 /* housead_2.png */; };
 		03D69CFC1285868C0069C7B0 /* housead_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03D69CF91285868C0069C7B0 /* housead_3.png */; };
 		03D69DDF12858B020069C7B0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D69DDE12858B020069C7B0 /* iAd.framework */; };
-		03D69E0712858D820069C7B0 /* libAdMob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D69E0612858D810069C7B0 /* libAdMob.a */; };
 		03D69E1712858FF30069C7B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D69E1612858FF30069C7B0 /* MessageUI.framework */; };
 		03D69E1B12858FFE0069C7B0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D69E1A12858FFE0069C7B0 /* MediaPlayer.framework */; };
 		03E1E3741271BF18000E2262 /* MXSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E1E3731271BF18000E2262 /* MXSoundPlayer.m */; };
@@ -520,6 +527,18 @@
 		031E54B5127ECA38004BEF9F /* game_center_default_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_center_default_2.png; sourceTree = "<group>"; };
 		031E54B6127ECA38004BEF9F /* game_center_pressed_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_center_pressed_2.png; sourceTree = "<group>"; };
 		031E5549127ED84F004BEF9F /* please_sign_in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = please_sign_in.png; sourceTree = "<group>"; };
+		0322D4A012F193BF00BCE042 /* AdMobDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobDelegateProtocol.h; sourceTree = "<group>"; };
+		0322D4A112F193BF00BCE042 /* AdMobInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobInterstitialAd.h; sourceTree = "<group>"; };
+		0322D4A212F193BF00BCE042 /* AdMobInterstitialDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobInterstitialDelegateProtocol.h; sourceTree = "<group>"; };
+		0322D4A312F193BF00BCE042 /* AdMobView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobView.h; sourceTree = "<group>"; };
+		0322D4A412F193BF00BCE042 /* libAdMob.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMob.a; sourceTree = "<group>"; };
+		0322D4B912F19CB300BCE042 /* fullgameteaser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullgameteaser.png; sourceTree = "<group>"; };
+		0322D4DA12F1A0AF00BCE042 /* getitnow_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getitnow_default.png; sourceTree = "<group>"; };
+		0322D4DB12F1A0AF00BCE042 /* getitnow_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getitnow_selected.png; sourceTree = "<group>"; };
+		0322D4F712F1A28C00BCE042 /* SoundOFF_P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOFF_P.png; sourceTree = "<group>"; };
+		0322D4F812F1A28C00BCE042 /* SoundOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundOFF.png; sourceTree = "<group>"; };
+		0322D4F912F1A28C00BCE042 /* SoundON_P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundON_P.png; sourceTree = "<group>"; };
+		0322D4FA12F1A28C00BCE042 /* SoundON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundON.png; sourceTree = "<group>"; };
 		0329D719126A610D00589909 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		0329D75E126A66C100589909 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
 		0329D75F126A66C100589909 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
@@ -663,11 +682,6 @@
 		03D69CF81285868C0069C7B0 /* housead_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = housead_2.png; sourceTree = "<group>"; };
 		03D69CF91285868C0069C7B0 /* housead_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = housead_3.png; sourceTree = "<group>"; };
 		03D69DDE12858B020069C7B0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		03D69E0212858D810069C7B0 /* AdMobDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobDelegateProtocol.h; sourceTree = "<group>"; };
-		03D69E0312858D810069C7B0 /* AdMobInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobInterstitialAd.h; sourceTree = "<group>"; };
-		03D69E0412858D810069C7B0 /* AdMobInterstitialDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobInterstitialDelegateProtocol.h; sourceTree = "<group>"; };
-		03D69E0512858D810069C7B0 /* AdMobView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobView.h; sourceTree = "<group>"; };
-		03D69E0612858D810069C7B0 /* libAdMob.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMob.a; sourceTree = "<group>"; };
 		03D69E1612858FF30069C7B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		03D69E1A12858FFE0069C7B0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		03E1E3721271BF18000E2262 /* MXSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSoundPlayer.h; sourceTree = "<group>"; };
@@ -977,9 +991,9 @@
 				03B5DCC31278931000B19A14 /* libFlurry.a in Frameworks */,
 				03CA16AD127B63B7005BF163 /* SystemConfiguration.framework in Frameworks */,
 				03D69DDF12858B020069C7B0 /* iAd.framework in Frameworks */,
-				03D69E0712858D820069C7B0 /* libAdMob.a in Frameworks */,
 				03D69E1712858FF30069C7B0 /* MessageUI.framework in Frameworks */,
 				03D69E1B12858FFE0069C7B0 /* MediaPlayer.framework in Frameworks */,
+				0322D4A512F193BF00BCE042 /* libAdMob.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,6 +1024,18 @@
 				03C9DAE11279A5B00087C5F7 /* MXMainMenuLayer.m */,
 			);
 			name = "Menu Scene";
+			sourceTree = "<group>";
+		};
+		0322D49F12F193BE00BCE042 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				0322D4A012F193BF00BCE042 /* AdMobDelegateProtocol.h */,
+				0322D4A112F193BF00BCE042 /* AdMobInterstitialAd.h */,
+				0322D4A212F193BF00BCE042 /* AdMobInterstitialDelegateProtocol.h */,
+				0322D4A312F193BF00BCE042 /* AdMobView.h */,
+				0322D4A412F193BF00BCE042 /* libAdMob.a */,
+			);
+			path = AdMob;
 			sourceTree = "<group>";
 		};
 		032F48BF12630457005F39FB /* Intro Scene */ = {
@@ -1177,18 +1203,6 @@
 			name = MoneyViewController;
 			sourceTree = "<group>";
 		};
-		03D69E0112858D810069C7B0 /* AdMob */ = {
-			isa = PBXGroup;
-			children = (
-				03D69E0212858D810069C7B0 /* AdMobDelegateProtocol.h */,
-				03D69E0312858D810069C7B0 /* AdMobInterstitialAd.h */,
-				03D69E0412858D810069C7B0 /* AdMobInterstitialDelegateProtocol.h */,
-				03D69E0512858D810069C7B0 /* AdMobView.h */,
-				03D69E0612858D810069C7B0 /* libAdMob.a */,
-			);
-			path = AdMob;
-			sourceTree = "<group>";
-		};
 		03E1E3711271BF05000E2262 /* Sound Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -1248,8 +1262,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0322D49F12F193BE00BCE042 /* AdMob */,
 				032FCF6F12869D26000E16F1 /* BCAchievement */,
-				03D69E0112858D810069C7B0 /* AdMob */,
 				03CA1695127B620D005BF163 /* Reachability.h */,
 				03CA1696127B620D005BF163 /* Reachability.m */,
 				03B5DCBF1278931000B19A14 /* FlurryLib */,
@@ -1509,6 +1523,11 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0322D4F712F1A28C00BCE042 /* SoundOFF_P.png */,
+				0322D4F812F1A28C00BCE042 /* SoundOFF.png */,
+				0322D4F912F1A28C00BCE042 /* SoundON_P.png */,
+				0322D4FA12F1A28C00BCE042 /* SoundON.png */,
+				0322D4B912F19CB300BCE042 /* fullgameteaser.png */,
 				032FCFB812869FFB000E16F1 /* disapproval_icon.png */,
 				032FCF9F12869EF5000E16F1 /* awesome_face_icon.png */,
 				032FCFA012869EF5000E16F1 /* awesome_face_icon@2x.png */,
@@ -1543,6 +1562,8 @@
 				03CA1486127B44E7005BF163 /* face_2.png */,
 				03CA1438127B1737005BF163 /* mx_menu_back_lite_288.png */,
 				03CA1439127B1737005BF163 /* mx_menu_back_lite_270.png */,
+				0322D4DA12F1A0AF00BCE042 /* getitnow_default.png */,
+				0322D4DB12F1A0AF00BCE042 /* getitnow_selected.png */,
 				032A4C021279CC42001EDF5D /* classic_game_default.png */,
 				032A4C031279CC42001EDF5D /* classic_game_selected.png */,
 				032A4C041279CC42001EDF5D /* classic_scores_default.png */,
@@ -2167,6 +2188,13 @@
 				032FCFA112869EF5000E16F1 /* awesome_face_icon.png in Resources */,
 				032FCFA212869EF5000E16F1 /* awesome_face_icon@2x.png in Resources */,
 				032FCFB912869FFB000E16F1 /* disapproval_icon.png in Resources */,
+				0322D4BA12F19CB300BCE042 /* fullgameteaser.png in Resources */,
+				0322D4DC12F1A0AF00BCE042 /* getitnow_default.png in Resources */,
+				0322D4DD12F1A0AF00BCE042 /* getitnow_selected.png in Resources */,
+				0322D4FB12F1A28C00BCE042 /* SoundOFF_P.png in Resources */,
+				0322D4FC12F1A28C00BCE042 /* SoundOFF.png in Resources */,
+				0322D4FD12F1A28C00BCE042 /* SoundON_P.png in Resources */,
+				0322D4FE12F1A28C00BCE042 /* SoundON.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2374,7 +2402,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10107A42-9014-4754-AE77-F26AB42588ED";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Ad Hoc Distribution";
@@ -2446,7 +2474,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A8316FCB-780E-4783-82F7-539A0819440A";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "App Store Distribution";
@@ -2617,7 +2645,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "124C48B7-3273-439F-89CE-1ABFFDF056D9";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2642,7 +2670,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "124C48B7-3273-439F-89CE-1ABFFDF056D9";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
